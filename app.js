@@ -1,14 +1,8 @@
-// ℹ️ Gets access to environment variables/settings
-// https://www.npmjs.com/package/dotenv
+//Middleware for .env
 require("dotenv/config");
-
-// ℹ️ Connects to the database
 require("./db");
-
-// Handles http requests (express is node js framework)
-// https://www.npmjs.com/package/express
 const express = require("express");
-
+const axios = require('axios')
 // Handles the handlebars
 // https://www.npmjs.com/package/hbs
 const hbs = require("hbs");
@@ -22,7 +16,12 @@ const projectName = "test";
 const capitalized = (string) => string[0].toUpperCase() + string.slice(1).toLowerCase();
 
 app.locals.title = `${capitalized(projectName)} created with IronLauncher`;
-
+const getDisney = async () => {
+app.locals.response =  await axios.get('http://api.disneyapi.dev/characters')
+app.locals.disney = app.locals.response.data.data;
+console.log(app.locals.response.data.data)
+}
+getDisney();
 // 👇 Start handling routes here
 const index = require("./routes/index");
 app.use("/", index);

@@ -1,4 +1,64 @@
-body {
+/* color  crimson; */
+
+.nav-bar{
+  display: flex;
+  height: 60px;
+  background-color: rgb(48, 184, 229);
+  margin: 0px;
+  padding: 10px;
+}
+
+.nav-bar a{
+  color: aliceblue;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 10px;
+  
+}
+
+.form{
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
@@ -9,4 +69,4 @@ a {
 
 h1 {
   color: 15px;
-}
+} */

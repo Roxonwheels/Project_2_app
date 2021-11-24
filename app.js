@@ -28,7 +28,17 @@ app.use(cookieParser());
 app.use(express.static(__dirname + "/public"));
 
 // //Middleware de sessions
-require("./config/session.config")(app);
+// require("./config/session.config")(app);
+// comentado porque me da error
+
+// 👇 Start handling routes here
+app.use("/", require("./routes/home.js"));
+app.use("/", require("./routes/auth.js"));
+// app.use("/characters", require("./routes/characters.js"))
+
+
+
+
 
 
 
@@ -55,7 +65,7 @@ require("./config/session.config")(app);
 
 
 
-const axios = require('axios')
+// const axios = require('axios')
 
 
 
@@ -64,25 +74,25 @@ const axios = require('axios')
 // require("./config")(app);
 
 // const projectName = "test";
-const capitalized = (string) => string[0].toUpperCase() + string.slice(1).toLowerCase();
+// const capitalized = (string) => string[0].toUpperCase() + string.slice(1).toLowerCase();
 
-app.locals.title = `${capitalized(projectName)} created with IronLauncher`;
-const getDisney = async () => {
-    app.locals.response =  await axios.get('http://api.disneyapi.dev/characters')
-app.locals.disney = app.locals.response.data.data;
-// console.log(app.locals.response.data.data)
-}
+// app.locals.title = `${capitalized(projectName)} created with IronLauncher`;
+// const getDisney = async () => {
+//     app.locals.response =  await axios.get('http://api.disneyapi.dev/characters')
+// app.locals.disney = app.locals.response.data.data;
+// // console.log(app.locals.response.data.data)
+// }
 
-getDisney();
-const index = require("./routes/index");
-app.use("/", index);
+// getDisney();
+// const home = require("./routes/home");
+// app.use("/", home);
 
-const authRoutes = require("./routes/auth");
-app.use("/auth", authRoutes);
+// const authRoutes = require("./routes/auth");
+// app.use("/auth", authRoutes);
 
-require("./error-handling")(app);
+// require("./error-handling")(app);
 
-module.exports = app;
+// module.exports = app;
 
 
 
@@ -90,5 +100,5 @@ module.exports = app;
 
 //App listener
 app.listen(PORT, () => {
-    console.log(chalk.bgGreen(`Server running in port ${PORT}`));
+    console.log(chalk.bgGreen(`Server listening on port http://localhost:${PORT}`));
   });

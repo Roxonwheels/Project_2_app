@@ -1,10 +1,12 @@
+<h2>Disney characters</h2>
+
 <div class="row row-cols-1 row-cols-md-3 g-3" >
-{{#each disney}}
+{{#each disneyCharacters}}
   <div class="col">
-    <img src={{this.imageUrl}}.{{"png"}}  class="card-img-top" alt="{{this.name}}">
+    <img src={{formatURL this.imageUrl}} class="card-img-top" alt="{{this.name}}">
     <div class="card-body">
       <h5 class="card-title">{{this.name}}</h5>
-      <!-- Button trigger modal -->
+      {{!-- <!-- Button trigger modal --> --}}
       <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#{{this._id}}">
         More info
       </button>
@@ -22,8 +24,8 @@
           </button>
         </div>
         <div class="modal-body">
-          <img src={{this.imageUrl}}.{{this.thumbnail.extension}} alt="{{this.name}}">
-          <p>Comics in which {{this.name}} appears:</p>
+          <img src={{formatURL this.imageUrl}} alt="{{this.name}}">
+          <p>Films in which {{this.name}} appears:</p>
           <ul>
             {{#each this.films}}
                 <li>{{this}}</li>

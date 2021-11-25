@@ -14,7 +14,7 @@ router.get("/login", (req, res, next) => {
   res.render("login");
 });
 
-// Crear nuevo usuario
+
 //POST para crear un nuevo usuario
 router.post("/signup", async (req, res, next) => {
   const { username, email, password, passwordRepeat } = req.body;
@@ -66,6 +66,46 @@ router.post("/signup", async (req, res, next) => {
 });
 
 
+//POST para hacer login
+router.post("/login", async (req, res) => {
+  const { username, password } = req.body;
+
+  //Verificar que ningun campo esta vacio
+  if (!username || !password) {
+    res.render("login", { msg: "You need to fill all inputs" });
+    return;
+  }
+  //Verificar si el usuario existe
+  const existingUser = await User.findOne({ username: username });
+  if (!existingUser) {
+    res.render("login", { msg: "User doesn't exist" });
+    return;
+  }
+
+  //Verificar si la contraseña es correcta
+  const passwordMatch = await bcrypt.compare(password, existingUser.password);
+  if (!passwordMatch) {
+    res.render("login", { msg: "Incorrect password" });
+    return;
+  }
+
+  //Hacer login
+  req.session.loggedUser = existingUser;
+  console.log("SESSION ====> ,", req.session);
+  res.redirect('/')
+});
+
+//POST logout
+router.get("/logout", async (req, res, next) => {
+  res.clearCookie("connect.sid", { path: "/" });
+
+  try {
+    await req.session.destroy();
+    res.redirect("/");
+  } catch (err) {
+    next(err);
+  }
+});
 
 
 

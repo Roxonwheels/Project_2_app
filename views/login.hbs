@@ -1,18 +1,22 @@
-<h2>Log In</h2>
+{{!-- <div class="background"> --}}
+   <div class="form-container">
+      <h2>Log In</h2>
+      <form action="/login" method="POST" class="form">
 
-<form action="/login" method="POST" class="form">
+         <label> Username</label>
+            <input type="text" name="username">
 
-   <label> Username
-      <input type="text" name="username">
-   </label>
+         <label> Password</label>
+            <input type="password" name="password">
 
-   <label> Password
-      <input type="password" name="password">
-   </label>
+         <button type="submit">Log In</button>
+      </form>
+   </div>
+{{!-- </div> --}}
 
-   <button type="submit">Log In</button>
-</form>
+<div class="msg">
 
-{{#if msg}}
-   {{msg}}
-{{/if}}
+   {{#if msg}}
+      {{msg}}
+   {{/if}}
+</div>

@@ -1,31 +1,143 @@
 /* color  crimson; */
+/* color nav-bar: rgb(48, 184, 229) */
+/* azul oscuro degradado: #0c4195e8 */
+/* azul sombra: #09367e */
 
+
+@font-face {
+  font-family: disneyFont;
+  src: url("../stylesheets/disneyFont.ttf");
+}
+body{
+  margin: 0px;
+  padding: 0px;
+  font-family: disneyFont;
+}
 .nav-bar{
   display: flex;
-  height: 60px;
-  background-color: rgb(48, 184, 229);
+  height: 65px;
+  /* background-color: rgb(48, 184, 229); */
+  background: linear-gradient(to bottom, rgb(48, 184, 229), #0c4195e8);
   margin: 0px;
-  padding: 10px;
+  width: 100%;
+  /* position: fixed; */
 }
 
 .nav-bar a{
   color: aliceblue;
   text-decoration: none;
-  font-size: 20px;
-  padding: 10px;
-  
+  font-size: 18px;
+  padding: 20px;
 }
 
-.form{
-  
+/* .background{
+  background: linear-gradient(to bottom, rgb(48, 184, 229), #0c4195e8);
+
+} */
+.margin{
+  margin-top: 50px;
+}
+
+.home-img{
+  background-image: url("/images/disney-wp6.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  padding: 0 ;
+  max-width: 100% ;
+  height: 92vh;
+  /* opacity: 0.9; */
+  flex-direction: column;
+}
+.home-img h1{
+    /* display: flex; */
+  font-size: 190px;
+  color: aliceblue;
+  margin: 170px auto;
+  margin-bottom: 30px;
+  text-shadow: 0.1em 0.1em #09367e;
+
+}
+.home-img h2{
+  /* display: flex; */
+font-size: 70px;
+color: aliceblue;
+margin: auto;
+margin-top: 0px;
+text-shadow: 1px  0px 3px #09367e,
+               0px  1px 3px #09367e,
+              -1px  0px 3px #09367e,
+               0px -1px 3px #09367e;
+
+}
+
+.form-container {
+  text-align: center;
+  margin: 70px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 5px solid black;
+  border-radius: 10px;
+  width: fit-content;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgb(48, 184, 229);
+} 
+
+.form {
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form label{
+  margin-top:20px ;
+}
+
+.form input {
+  border-radius: 10px;
+  padding: 0;
+  box-shadow: 0 4px 5px rgb(48, 184, 229);
+
+}
+
+.form button{
+  margin-top: 20px;
+  border-radius: 10px;
+  background: linear-gradient(to top, rgb(48, 184, 229), #a2dbf8cf);
+}
+
+.msg{
+  font-family: disneyFont;
+  text-align: center;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
 }
 
 
+.card-img-top{
+  height: 300px;
+  object-fit: cover;
+  object-fit: left;
+}
+.btn-secondary{
+  background: linear-gradient(to bottom, rgb(48, 184, 229), #0c4195e8);
 
+}
+/* .modal img {
+  width: 150px;
+  margin-bottom: 15px;
+  border: 1px solid black;
+}
 
-
-
-
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
 
 
 

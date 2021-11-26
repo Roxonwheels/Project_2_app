@@ -1,6 +1,6 @@
-<h2>Disney characters</h2>
+{{!-- <h2>Disney characters</h2> --}}
 
-<div class="row row-cols-1 row-cols-md-3 g-3" >
+<div class="row row-cols-1 row-cols-md-3 g-3 margin" >
 {{#each disneyCharacters}}
   <div class="col">
     <img src={{formatURL this.imageUrl}} class="card-img-top" alt="{{this.name}}">
@@ -28,7 +28,13 @@
           <p>Films in which {{this.name}} appears:</p>
           <ul>
             {{#each this.films}}
-                <li>{{this}}</li>
+                <li>{{this.name}}</li>
+            {{/each}}
+          </ul>
+          <p>TV shows in which {{this.name}} appears:</p>
+          <ul>
+            {{#each this.tvShows}}
+                <li>{{this.name}}</li>
             {{/each}}
           </ul>
           
@@ -45,3 +51,22 @@
   </div>
 {{/each}}
 </div>
+
+
+
+
+
+
+
+
+
+
+
+{{!-- basic schema --}}
+
+{{!-- <div>
+  {{#each disneyCharacters}}
+    <img src={{formatURL this.imageUrl}} alt="{{this.name}}">
+    <p>{{this.name}}</p>
+  {{/each}}
+</div> --}}

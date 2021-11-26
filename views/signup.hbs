@@ -1,26 +1,25 @@
+<div class="form-container">
 <h2>Sign Up</h2>
+   <form action="/signup" method="POST" class="form">
 
-<form action="/signup" method="POST">
+      <label> Username</label>
+         <input type="text" name="username">
 
-   <label> Username
-      <input type="text" name="username">
-   </label>
+      <label> Email</label>
+         <input type="text" name="email">
 
-   <label> Email
-      <input type="text" name="email">
-   </label>
+      <label> Password</label>
+         <input type="password" name="password">
 
-   <label> Password
-      <input type="password" name="password">
-   </label>
+      <label> Repeat password</label>
+         <input type="password" name="passwordRepeat">
 
-   <label> Repeat password
-      <input type="password" name="passwordRepeat">
-   </label>
+      <button type="submit">Sign Up</button>
+   </form>
+</div>
 
-   <button type="submit">Sign Up</button>
-</form>
-
+<div class="msg">
 {{#if msg}}
    {{msg}}
 {{/if}}
+</div>

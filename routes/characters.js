@@ -6,14 +6,15 @@ const Character = require("../models/Character.model");
 const User = require("../models/User.model");
 
 
-// const {isLoggedIn} = require("../middleware/isLoggedIn")
+const {isLoggedIn} = require("../middleware/route-gard")
 
 
 
-router.get("/", async (req,res) =>{
+router.get("/", isLoggedIn, async (req,res) =>{
   try {
-    const axiosCall = await axios( `http://api.disneyapi.dev/characters?limit50`)
+    const axiosCall = await axios( `http://api.disneyapi.dev/characters`)
     disneyCharacters = axiosCall.data.data
+
     res.render("./characters.hbs", {disneyCharacters})
   }
   catch(err){

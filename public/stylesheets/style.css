@@ -8,6 +8,10 @@
   font-family: disneyFont;
   src: url("../stylesheets/disneyFont.ttf");
 }
+@font-face {
+  font-family: disneyFont2;
+  src: url("../stylesheets/waltograph42.ttf");
+}
 body{
   margin: 0px;
   padding: 0px;
@@ -29,6 +33,15 @@ body{
   font-size: 18px;
   padding: 20px;
 }
+#disney{
+  margin-left: auto;
+  padding-top: 10px;
+  /* padding: auto; */
+
+  font-size: 40px;
+  justify-content: baseline;
+
+}
 
 /* .background{
   background: linear-gradient(to bottom, rgb(48, 184, 229), #0c4195e8);
@@ -36,6 +49,7 @@ body{
 } */
 .margin{
   margin-top: 50px;
+  margin-left: 90px;
 }
 
 .home-img{
@@ -48,14 +62,17 @@ body{
   height: 92vh;
   /* opacity: 0.9; */
   flex-direction: column;
+  /* font-family: disneyFont2 */
+
 }
 .home-img h1{
     /* display: flex; */
-  font-size: 190px;
+  font-size: 280px;
   color: aliceblue;
-  margin: 170px auto;
+  margin: 80px auto;
   margin-bottom: 30px;
   text-shadow: 0.1em 0.1em #09367e;
+  font-family: disneyFont2
 
 }
 .home-img h2{
@@ -99,6 +116,7 @@ text-shadow: 1px  0px 3px #09367e,
   padding: 0;
   box-shadow: 0 4px 5px rgb(48, 184, 229);
 
+
 }
 
 .form button{
@@ -115,19 +133,24 @@ text-shadow: 1px  0px 3px #09367e,
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  font-size: 20px;
 }
 
 
 .card-img-top{
-  height: 300px;
+  height: 420px;
+  max-width: 400px;
   object-fit: cover;
   object-fit: left;
+  border: 3px solid black;
+  box-shadow: 0 5px 5px 3px rgb(48, 184, 229);
+
 }
-.btn-secondary{
+.btn{
   background: linear-gradient(to bottom, rgb(48, 184, 229), #0c4195e8);
 
 }
-/* .modal img {
+.modal img {
   width: 150px;
   margin-bottom: 15px;
   border: 1px solid black;
@@ -137,7 +160,15 @@ text-shadow: 1px  0px 3px #09367e,
   display: flex;
   flex-direction: column;
   align-items: center;
-} */
+}
+
+.modal-body ul{
+  font-family: disneyFont2;
+  font-size: 20px;
+}
+.modal-footer{
+  justify-content: space-between;
+}
 
 
 

@@ -4,7 +4,7 @@ const characterSchema = new Schema(
   {
     name: { type: String, required: true },
     films: [{ type: String }],
-    tvShows: { type: String },
+    tvShows: [{ type: String }],
     imageUrl: { type: String },
   },
   { timestamps: true }

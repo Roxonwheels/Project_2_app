@@ -11,7 +11,7 @@ const userSchema = new Schema(
       required: [true, "Can't be blank"],
       match: [/\S+@\S+\.\S+/, "Email not valid"]
     },
-    characters: [{ type: Schema.Types.ObjectId, ref: "Character" }],
+    favorites: [{ type: Schema.Types.ObjectId, ref: "Character" }],
   },
   { timestamps: true }
 );

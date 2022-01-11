@@ -1,0 +1,19 @@
+<div class="row row-cols-1 row-cols-md-3 g-3 margin" >
+{{#each characters}}
+  <div class="col">
+    <img src={{this.imageUrl}} class="card-img-top" alt="{{this.name}}">
+    {{!-- <img src={{formatURL this.imageUrl}} class="card-img-top" alt="{{this.name}}"> --}}
+
+    <div class="card-body">
+      <h5 class="card-title">{{this.name}}</h5>
+      {{!-- <!-- Button delete --> --}}
+      <form method='POST' action="/characters/favorites/{{this._id}}/delete">
+        <button type="button" class="btn btn-secondary">
+            Delete
+        </button>
+     </form>
+    </div>
+  </div>
+
+  {{/each}}
+</div>

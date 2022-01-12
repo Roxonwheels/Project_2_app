@@ -9,7 +9,7 @@ const User = require("../models/User.model");
 const {isLoggedIn} = require("../middleware/route-gard")
 
 
-
+//get all characters
 router.get("/", isLoggedIn, async (req,res) =>{
   try {
     const axiosCall = await axios( `http://api.disneyapi.dev/characters?page=2`) 
@@ -22,6 +22,8 @@ router.get("/", isLoggedIn, async (req,res) =>{
     console.log(err)
   }
 })
+
+
 
 //create
 
@@ -47,26 +49,25 @@ router.post("/create/:id", async (req, res) => {
     { new: true }
   );
 
-  res.redirect('/favorites')
+  res.redirect('/characters')
 });
 
 
 // delete
 
 
-
-router.post('/favorites/:id/delete', async (req, res) => {
-
+router.post("/delete/:id", async (req, res) => {
   try {
-    await User.findByIdAndUpdate(req.session.user._id, {
-      $pull: { favorites: req.params.id},
-    })
-
-    res.redirect('/favorites')
+    await Character.findByIdAndDelete(req.params.id, { new: true });
+    await User.findByIdAndUpdate(req.session.loggedUser._id, {
+      $pull: { pics: req.params.id },
+    });
   } catch (err) {
-    console.log(err)
+    console.log(err);
   }
+  res.redirect('/favorites');
 });
+
 
 
 
